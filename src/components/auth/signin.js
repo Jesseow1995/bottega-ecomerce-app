@@ -7,7 +7,7 @@ class SignIn extends Component {
     render() {
         return (
             <div className='sign-in'>
-                <SignInForm />
+                <SignInForm className='sign-in__form' />
             </div>
         )
     }
