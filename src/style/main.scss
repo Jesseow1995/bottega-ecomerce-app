@@ -20,11 +20,18 @@ body {
 
 @import 'layout.scss';
 @import 'header-navbar.scss';
-@import 'authStyles/signin.scss';
-@import 'authStyles/signup.scss';
 @import 'pageTitle.scss';
 @import 'form-fields.scss';
 @import 'details.scss';
+
+// auth styles
+@import 'authStyles/signin.scss';
+@import 'authStyles/signup.scss';
+
+// account styles
 @import 'account/account-information.scss';
 @import 'account/purchase-history.scss';
 @import 'account/account.scss';
+
+// shop styles
+@import 'shop/shop.scss'
