@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import * as actions from '../../actions';
+import ShopSearchBar from './shopSearchBar';
 
 class Shop extends Component {
 
@@ -28,13 +29,35 @@ class Shop extends Component {
         }
         return true;
     }
+
+    onSubmit = (fields) => {
+        console.log(fields);
+    }
+
     render() {
-        this.props.setNavbarLinks(this.props.categories);
+
         return (
             <div className="shop">
 
 
-                {/* shop search bar */}
+                <ShopSearchBar onSubmit={this.onSubmit} className='shop__search-bar' />
+                <div className='shop__products'>
+                    {
+                        this.props.filteredProducts.map(product => {
+                            return (
+                                <div key={product._id} className='shop-product'>
+                                    {product.title}
+                                    <div className='shop-product__title'>
+                                        {product.title}
+                                    </div>
+                                    <div className='shop-product__description'>
+                                        {product.description}
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
                 {/* shop product */}
                 {/* shop cart button */}
             </div>
@@ -43,9 +66,10 @@ class Shop extends Component {
 }
 
 function mapStateToProps(state) {
-    const { categories } = state.shop;
+    const { categories, filteredProducts } = state.shop;
     return {
-        categories
+        categories,
+        filteredProducts
     }
 }
 
