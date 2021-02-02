@@ -25,7 +25,7 @@ class Shop extends Component {
 
     shouldComponentUpdate(nextProps) {
         if (this.props != nextProps) {
-            this.props.setNavbarLinks(nextProps.categories, (id) => this.props.filterProductsWithCategoryId);
+            this.props.setNavbarLinks(nextProps.categories, (_id) => this.props.filterProductsWithCategoryId(_id));
         }
         return true;
     }
