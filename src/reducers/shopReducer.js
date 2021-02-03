@@ -15,7 +15,6 @@ export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
         case SET_SHOP_CATEGORIES:
             const categories = action.payload;
-
             return {
                 ...state,
                 categories
