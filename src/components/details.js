@@ -6,11 +6,11 @@ class Details extends Component {
         const { links, info } = this.props;
         let children = []
         if (links) {
-            children = links.map((link) => {
+            children = links.map(link => {
                 return <a key={link.id} onClick={link.onClick} className='details__link'>{link.title}</a>
             })
         } else if (info) {
-            children = info.map((item) => {
+            children = info.map(item => {
                 return <div key={item.id} className='details__item'>{item.title}</div>
             })
         }

@@ -1,12 +1,66 @@
 import {
     SET_USER_PURCHASES,
-    SET_PURCHASE_DETAIL
+    SET_PURCHASE_DETAIL,
+    SET_CART_PRODUCTS,
+    ADD_CART_PRODUCTS,
+    AUTHENTICATE_USER
 } from './types';
 
+export function signIn({ email, password }) {
+    return ({
+        type: AUTHENTICATE_USER,
+        payload: {
+            user: {
+                _id: 0,
+                name: 'Jesse Williamson',
+                address: '123 Bark Avenue',
+                cartProducts: []
+            }
+        }
+    })
+}
 export function setPurchaseDetail(_id) {
     return ({
         type: SET_PURCHASE_DETAIL,
         payload: _id
+    })
+}
+
+export function addCartProduct(product) {
+    return ({
+        type: ADD_CART_PRODUCTS,
+        payload: product
+    })
+}
+
+export function fetchCartProducts() {
+    return ({
+        tpe: SET_CART_PRODUCTS,
+        payload: [
+            {
+                _id: 0,
+                product: {
+                    title: 'JavaScript in the Browser',
+                    description: 'Some generic description Some generic description Some generic description Some generic description Some generic description Some generic description Some generic description',
+                    price: 1.99,
+                    belongsTo: [0, 1],
+                    imageUrl: 'http://via.placeholder.com/80x80',
+                },
+                quantity: 2
+            },
+            {
+                _id: 1,
+                product: {
+                    _id: 1,
+                    title: 'Graph Database',
+                    description: 'Some generic description Some generic description Some generic description Some generic description Some generic description Some generic description Some generic description',
+                    price: 1.99,
+                    belongsTo: [0, 6],
+                    imageUrl: 'http://via.placeholder.com/80x80',
+                },
+                quantity: 1
+            }
+        ]
     })
 }
 export function fetchUserPurchases() {

@@ -68,7 +68,9 @@ export function fetchShopProducts() {
                 title: 'JavaScript in the Browser',
                 description: 'This is some filler text needed for the description to make sure that it is working.',
                 price: 1.99,
-                belongsTo: [0, 1]
+                belongsTo: [0, 1],
+                imageUrl: 'http://via.placeholder.com/80x80',
+
 
             },
             {
@@ -76,42 +78,54 @@ export function fetchShopProducts() {
                 title: 'Graph Database',
                 description: 'This is some filler text needed for the description to make sure that it is working.',
                 price: 1.99,
-                belongsTo: [0, 6]
+                belongsTo: [0, 6],
+                imageUrl: 'http://via.placeholder.com/80x80',
+
             },
             {
                 _id: 2,
                 title: 'Full Stack Development',
                 description: 'This is some filler text needed for the description to make sure that it is working.',
                 price: 1.99,
-                belongsTo: [0, 1, 4]
+                belongsTo: [0, 1, 4],
+                imageUrl: 'http://via.placeholder.com/80x80',
+
             },
             {
                 _id: 3,
                 title: 'User Interface Design',
                 description: 'This is some filler text needed for the description to make sure that it is working.',
                 price: 1.99,
-                belongsTo: [0, 2]
+                belongsTo: [0, 2],
+                imageUrl: 'http://via.placeholder.com/80x80',
+
             },
             {
                 _id: 4,
                 title: 'JavaScript Development',
                 description: 'This is some filler text needed for the description to make sure that it is working.',
                 price: 1.99,
-                belongsTo: [0, 1]
+                belongsTo: [0, 1],
+                imageUrl: 'http://via.placeholder.com/80x80',
+
             },
             {
                 _id: 5,
                 title: 'User Experience Design',
                 description: 'This is some filler text needed for the description to make sure that it is working.',
                 price: 1.99,
-                belongsTo: [0, 2]
+                belongsTo: [0, 2],
+                imageUrl: 'http://via.placeholder.com/80x80',
+
             },
             {
                 _id: 6,
                 title: 'Advanced OOP',
                 description: 'This is some filler text needed for the description to make sure that it is working.',
                 price: 1.99,
-                belongsTo: [0, 6]
+                belongsTo: [0, 6],
+                imageUrl: 'http://via.placeholder.com/80x80',
+
             }
         ]
     })

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { reduxForm, Field } from 'redux-form';
 import { FormInput, FormButton, LongGrayButton } from '../formFields';
+
 import history from '../../history';
 
 class AccountInformationForm extends Component {
@@ -56,7 +57,7 @@ class AccountInformationForm extends Component {
                     name='zipcode'
                     component={FormInput} />
 
-                <div key={3} className="account-information-form__line"></div>
+                <div className="account-information-form__line"></div>
 
                 {
                     this.state.showPasswords ?

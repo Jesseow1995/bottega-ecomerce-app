@@ -34,6 +34,7 @@ class SignInForm extends Component {
                     placeholder='Email'
                     name='email'
                     component={FormInput} />
+
                 <Field className='sign-in-form__password'
                     type='password'
                     title='Password'
@@ -49,6 +50,7 @@ class SignInForm extends Component {
                     title='Login'
                     name='login'
                     component={FormButton} />
+
                 <Details className='sign-in-form__details' title='QuickLinks' links={links} />
             </form>
         )
