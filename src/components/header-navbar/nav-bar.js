@@ -6,7 +6,7 @@ class NavBar extends Component {
     handleOnClick = (link) => {
         this.props.changeNavbarActive(link._id)
         if (this.props.onClick) {
-            this.props.onClick(link.id);
+            this.props.onClick(link._id);
         }
     }
     render() {

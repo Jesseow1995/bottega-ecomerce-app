@@ -4,7 +4,7 @@ import Quantity from '../quantity';
 
 class ShopProduct extends Component {
     render() {
-        const { _id, title, description } = this.props;
+        const { _id, title, description, price } = this.props;
         return (
             <div className='shop-product'>
                 <div className="shop-product__front">

@@ -39,7 +39,7 @@ export default function (state = INITIAL_STATE, action) {
             var filteredProducts = [];
 
             state.products.map(product => {
-                if (product.title.toLowerCase().include(action.payload.query.toLowerCase())) {
+                if (product.title.toLowerCase().includes(action.payload.query.toLowerCase())) {
                     filteredProducts.push(product)
                 }
             })
