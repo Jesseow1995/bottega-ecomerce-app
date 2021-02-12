@@ -2,7 +2,7 @@ import {
     SET_USER_PURCHASES,
     SET_PURCHASE_DETAIL,
     SET_CART_PRODUCTS,
-    ADD_CART_PRODUCTS,
+    ADD_CART_PRODUCT,
     AUTHENTICATE_USER
 } from './types';
 
@@ -28,10 +28,11 @@ export function setPurchaseDetail(_id) {
 
 export function addCartProduct(product) {
     return ({
-        type: ADD_CART_PRODUCTS,
+        type: ADD_CART_PRODUCT,
         payload: product
     })
 }
+
 
 export function fetchCartProducts() {
     return ({
@@ -40,6 +41,7 @@ export function fetchCartProducts() {
             {
                 _id: 0,
                 product: {
+                    _id: 0,
                     title: 'JavaScript in the Browser',
                     description: 'Some generic description Some generic description Some generic description Some generic description Some generic description Some generic description Some generic description',
                     price: 1.99,
