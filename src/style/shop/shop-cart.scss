@@ -1,4 +1,6 @@
 .shop-cart {
+    transition: all .3s ease;
+
     display: grid;
     grid-template-rows: [tog-s] 40px [tog-e con-s] 675px [con-e];    
     grid-template-columns: [s] 1fr [e];
@@ -9,9 +11,7 @@
         grid-column: s/e;
         justify-self: end;
 
-        display: grid;
-        justify-items: center;
-        align-items: center;
+        
     }
 
     &__content {
@@ -22,6 +22,7 @@
 
 .shop-cart {
     &__toggle {
+        z-index: 6;
     }
     &__content {
         height: 675px;
@@ -31,17 +32,23 @@
     }
 }
 .cart-button {
+    transition: all .3s ease;
+
     background-color: #333;
     color: white;
     font-size: 28px;
     border-radius: 25px 0 0 25px;
     height: 40px;
     width: 76px;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }
 .cart-content {
 
     display: grid;
-    grid-template-rows: 25px [title-s] 40px [title-e products-e] 1fr [products-e footer-s] 112px [footer-e];
+    grid-template-rows: 25px [title-s] 40px [title-e products-s] 1fr [products-e footer-s] 112px [footer-e];
     grid-template-columns: [footer-s] 30px [s] 1fr [e] 30px [footer-e];
     &__title {
         grid-row: title-s/title-e;
@@ -55,10 +62,10 @@
     &__products {
         padding-top: 50px;
         grid-column: s/e;
-        grid-row: product-s/product-e;
+        grid-row: products-s/products-e;
         display: grid;
         overflow-y: scroll;
-        grid-gap: 45px;
+        grid-row-gap: 45px;
     }
     &__footer {
         grid-column: footer-s/footer-e;
@@ -70,12 +77,12 @@
 .cart-footer {
 
     height: 113px;
-    width: 521px;
+    
     background-color: #1a1a1a;
 
     display: grid;
     grid-template-rows: [s] 1fr [e];
-    grid-template-columns: 50px [checkout-s] 1fr [checkout-e sub-s] 1fr [sub-e] 27px [price-s] 47px [price-e] 31px;
+    grid-template-columns: 50px [checkout-s] 1fr [checkout-e sub-s] 1fr [sub-e] 27px [price-s] 46px [price-e] 31px;
     align-items: center;
 
 
@@ -122,4 +129,8 @@
         color: white;
         font-weight: 600;
     }
+}
+
+.cart-hidden {
+    transform: translateX(520px);
 }

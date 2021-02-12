@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-import CartProduct from './cartProduct';
+import CartProduct from './shopCartProduct';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-function CartButton({ className, icon }) {
-    return (
-        <div className={`${className} cart-button`}>
-            <i className={icon}></i>
-        </div>
-    )
-}
+import CartButton from './cartButton';
+
 
 function CartContent({ className, products }) {
     let count = products.length;
@@ -28,7 +23,7 @@ function CartContent({ className, products }) {
 }
 
 function CartFooter({ className, products }) {
-    const { className } = this.props;
+    const price = 7.96;
     return (
 
         <div className={`${className} cart-footer`}>
@@ -49,17 +44,25 @@ class ShopCart extends Component {
     componentDidMount() {
         this.props.fetchCartProducts();
     }
+
+    handleAddToCart = () => {
+        if (document.getElementById('shop-cart').classList.contains('cart-hidden')) {
+            document.getElementById('shop-cart').classList.remove('cart-hidden');
+        } else {
+            document.getElementById('shop-cart').classList.add('cart-hidden');
+        }
+    }
+
     render() {
         const { className } = this.props;
         return (
-            <div className={`${className} shop-cart`}>
-                <CartButton className='shop-cart__toggle' icon='fas fa-times'></CartButton>
+            <div id='shop-cart' className={`${className} shop-cart cart-hidden`}>
+                <CartButton className='shop-cart__toggle' icon='fas fa-times' onClick={this.handleAddToCart}></CartButton>
                 <CartContent className='shop-cart__content' products={this.props.cartProducts}></CartContent>
             </div>
         )
     }
 }
-
 function mapStateToProps(state) {
     const { cartProducts } = state.user;
     console.log(cartProducts);

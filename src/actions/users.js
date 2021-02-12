@@ -35,7 +35,7 @@ export function addCartProduct(product) {
 
 export function fetchCartProducts() {
     return ({
-        tpe: SET_CART_PRODUCTS,
+        type: SET_CART_PRODUCTS,
         payload: [
             {
                 _id: 0,
