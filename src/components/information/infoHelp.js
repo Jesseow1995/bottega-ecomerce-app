@@ -2,7 +2,9 @@ import React from 'react';
 
 export function UnderlinedTitle({ className, title }) {
     return (
-        <div className={`${className} underlined-title`}>{title}</div>
+        <div className={`${className} underlined-title`}>
+            {title}
+        </div>
     )
 }
 
