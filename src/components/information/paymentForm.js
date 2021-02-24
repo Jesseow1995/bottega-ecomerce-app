@@ -4,7 +4,7 @@ import { reduxForm, Field } from 'redux-form';
 import { FormInput, FormButton } from '../formFields';
 import Details from "../details";
 import history from '../../history';
-
+import OrderSummary from './orderSummary';
 class PaymentForm extends Component {
     render() {
 
@@ -52,7 +52,7 @@ class PaymentForm extends Component {
                     name='back'
                     short={true}
                     component={FormButton} />
-
+                <OrderSummary className='shipping-form__summary' />
             </form>
         )
     }
